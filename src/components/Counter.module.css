@@ -1,0 +1,30 @@
+.Counter {
+    border: 1px solid #6EE4FE;
+    margin: 5% 43%;
+    padding: 10px;
+    border-radius: 3px;
+
+
+}
+
+.value {
+    border: 1px solid #6EE4FE;
+    background-color: #6EE4FE;
+    border-radius: 3px;
+    padding: 10px;
+    font-weight: bold;
+    color: #2A2D36;
+    margin-bottom: 5px;
+}
+
+.box {
+    border: 1px solid #6EE4FE;
+    padding: 10px;
+    border-radius: 3px;
+
+}
+
+.errorMessage{
+    margin-top: 5px;
+    color:red
+}

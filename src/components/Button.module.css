@@ -1,0 +1,19 @@
+.button {
+    margin-right: 5px;
+    background-color: #6EE4FE;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #2A2D36;
+    border: #6EE4FE;
+    padding: 5px 21px;
+}
+.isDone{
+
+    background-color: #457485;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #2A2D36;
+    border: #6EE4FE;
+    padding: 5px 21px;
+}
