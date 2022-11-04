@@ -7,12 +7,13 @@ type CounterType={
     value:number
     firstFunc:()=>void
     secondFunc:()=>void
+    maxValue:number
 }
 
 export const Counter=(props:CounterType)=>{
-    const{value,firstFunc,secondFunc}=props
+    const{value,firstFunc,secondFunc,maxValue}=props
     const callBackInsHandler=()=>{
-        if(value<5) {
+        if(value<maxValue) {
             firstFunc()
             setError(null)
         } else{
@@ -23,14 +24,18 @@ export const Counter=(props:CounterType)=>{
         secondFunc()
         setError(null)
     }
-    const [error,setError]=useState<string|null>(null)
+    const [error,setError]=useState<string|null>('Click Inc')
+/*
+    const[disabled,setDisable]=useState(true)
+*/
+
 
     return(
         <div className={s.Counter}>
-            <div className={s.value}>{value}</div>
+            <div className={(value===maxValue)?s.valueMax:s.value}>{value}</div>
             <div className={s.box}>
-                <Button  name={'Inc'} callBack={callBackInsHandler} value={value}/>
-                <Button name={'Reset'} callBack={callBackResetHandler} value={value} />
+                <Button maxValue={maxValue}  name={'Inc'} callBack={callBackInsHandler} value={value}/>
+                <Button maxValue={maxValue} name={'Reset'} callBack={callBackResetHandler} value={value} />
                 {/*<div className={s.errorMessage}>Click Reset</div>*/}
                 {error && <div className={s.errorMessage}>{error}</div>}
             </div>

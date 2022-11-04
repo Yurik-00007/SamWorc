@@ -3,17 +3,20 @@ import s from './App.module.css';
 import {Counter} from "./components/Counter";
 
 function App() {
-    const [value,setValue]=useState(0)
+    const init:number=0
+    const inc:number=1
+    const maxValue:number=5
+    const [value,setValue]=useState<number>(init)
     const firsteFunc=()=>{
-        if(value<5)
-        setValue(value+1)
+        if(value<maxValue)
+        setValue(value+inc)
     }
     const secondFunc=()=>{
-        setValue(0)
+        setValue(init)
     }
     return (
         <div className={s.App}>
-           <Counter value={value} firstFunc={firsteFunc} secondFunc={secondFunc}/>
+           <Counter maxValue={maxValue} value={value} firstFunc={firsteFunc} secondFunc={secondFunc}/>
 {/*
            <div>
                <span><Inc value={value}/></span><span><Reset/></span>

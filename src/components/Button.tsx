@@ -4,15 +4,16 @@ type ButtonType={
     name:string;
     callBack:()=>void
     value:number
+    maxValue:number
 }
 
 export const Button=(props:ButtonType)=>{
-    const {name,callBack,value}=props
+    const {name,callBack,value,maxValue}=props
     const onClickHandler=()=>{
         callBack()
     }
     return(
-        <button className={(value<5)? s.button: s.isDone} onClick={onClickHandler}>
+        <button  className={(value<maxValue)? s.button: s.isDone} onClick={onClickHandler}>
             {name}
         </button>
     )
